@@ -1,6 +1,10 @@
-button{
+.square{
   border: 1px solid black;
   font-size: 4rem;
   width: 100px;
-  height: 100px;
+  height: 100px
+}
+.board-row{
+  display: flex;
+  align-items: center;
 }
