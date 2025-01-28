@@ -33,5 +33,6 @@
 }
 .status{
   color: red;
+  text-shadow: 1px 1px 12px rgb(255, 0, 0);
   font-size: 4rem;
 }
