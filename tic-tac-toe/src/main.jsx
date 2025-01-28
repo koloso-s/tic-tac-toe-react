@@ -10,7 +10,7 @@ function Main() {
   function renderSwitch(mode) {
     switch (mode) {
       case 'player-vs-player':
-        return <Board />;
+        return <Board setGameMode={setGameMode}/>;
       case 'menu':
       default:
         return <Menu setGameMode={setGameMode} />;

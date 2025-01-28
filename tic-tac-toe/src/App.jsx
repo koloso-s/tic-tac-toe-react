@@ -6,10 +6,9 @@ function Square({ value, onSquareClick  }) {
   return <button className="square" onClick={onSquareClick}>{value}</button>;
 }
 
-const squares = [null, null, null, null, null, null, null, null, null];
-const nextSquares = ['X', null, null, null, null, null, null, null, null];
+const nextSquares = ['X'];
 
-export default function Board() {
+export default function Board({setGameMode}) {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
 
@@ -35,6 +34,19 @@ export default function Board() {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
+  function endPanel(){
+    if(winner){
+      return(
+        <div className="buttons">
+          <div className="button" onClick={()=>{
+            setSquares(Array(9).fill(null)); 
+            setXIsNext(true); 
+          }}>play-again</div>
+          <div className="button" onClick={()=>{setGameMode("menu")}}>menu</div>
+      </div>
+      )
+    }
+  }
   return (
     <>
       <div className="status">{status}</div>
@@ -55,6 +67,7 @@ export default function Board() {
         <Square value={squares[8]} onSquareClick={() => handleClick(8)}/>
       </div>
       </div>
+      {endPanel()}
     </>
   );
 }

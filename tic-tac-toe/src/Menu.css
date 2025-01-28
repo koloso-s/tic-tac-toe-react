@@ -1,10 +1,15 @@
+h1{
+    color: red;
+    text-shadow: 1px 1px 12px rgb(255, 0, 0);
+    font-size: 7em;
+}
 .buttons{
     width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
-button{
+.button{
     border: 1px solid red;
     color: red;
     border-radius: 5px;
@@ -15,7 +20,7 @@ button{
     background-color: black;
     transition: 0.2s;
 }
-button:hover{
+.button:hover{
     transform: scale(1.1);
     box-shadow: 1px 1px 19px rgb(255, 0, 0);
 }
