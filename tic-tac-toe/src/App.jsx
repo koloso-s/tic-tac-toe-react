@@ -21,7 +21,7 @@ export default function Board({ setGameMode, gameMode, playerChoice, setPlayerCh
         return nextSquares;
       });
   }
-  if(!PlayerIsNext ){
+  if(!PlayerIsNext && gameMode == "player-vs-computer"){
     computerChoice(playerChoice !== "X" ? "X" : "O");
     setPlayerIsNext(true);
   }
@@ -71,7 +71,7 @@ export default function Board({ setGameMode, gameMode, playerChoice, setPlayerCh
     } else if (!squares.includes(null)) {
       status = "It's a draw!";
     } else {
-      status = "Next: " + (PlayerIsNext ? "Player" : "Computer");
+      status = "Your symbol: " + playerChoice;
     }
   }
 
